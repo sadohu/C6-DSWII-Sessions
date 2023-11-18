@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class ClassCliente {
+public class ClassClient {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		try {

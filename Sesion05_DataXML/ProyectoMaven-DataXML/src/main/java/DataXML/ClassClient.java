@@ -70,6 +70,11 @@ public class ClassClient {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "ClassClient [idcliente= " + idcliente + ", nombre= " + nombre + ", apellido= " + apellido + ", dni= " + dni
+				+ ", sexo= " + sexo + ", telefono= " + telefono + "]";
+	}
 	
 }

@@ -23,9 +23,7 @@ public class ClassReadXML {
 			
 			// Bucle para visualizar la información
 			for (ClassClient item : clientType.getCliente()) {
-				System.out.println("Codigo: " + item.getIdcliente());
-				System.out.println("Nombres: " + item.getNombre() + " " + item.getApellido());
-				System.out.println("Telefono: " + item.getTelefono());
+				System.out.println(item);
 			}
 			
 		} catch (JAXBException e) {

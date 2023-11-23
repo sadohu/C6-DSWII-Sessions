@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Client {
 	private static final int BUFFER_SIZE = 8192;
-	
+
 	public static void main(String[] args) {
 		byte[] data = new byte[BUFFER_SIZE];
 		
@@ -53,16 +53,34 @@ public class Client {
 								new File("E:\\Files\\C6-DSWII\\SocketThread\\Server\\" + srtFile)));
 				int bytesReceived = 0;
 				while(fileSize > 0 && (bytesReceived = inputStream.read(data, 0, BUFFER_SIZE)) > 0){
-					
+					// Escribimos la data recibida
+					serverFile.write(data, 0, bytesReceived);
+					System.out.println(bytesReceived);
 				}
+				System.out.println("Archivo recibido correctamente");
+				serverFile.close();
+			} else {
+				System.out.println("El archivo solicitado no existe");
 			}
-			
-			
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Conexión con el servidor cerrada.");
+			if(fileSize != 0)
+				System.out.println("No se ha realizado la recepción del fichero correctamente");
+		} finally {
+			try {
+				if(inputStream != null)
+					inputStream.close();
+				if(outputStream != null)
+					outputStream.close();
+				if(socket != null)
+					socket.close();
+			} catch (Exception e2) {
+				System.out.println("Error al cerrar conexiones.");
+			}
 		}
+		
 
 	}
 

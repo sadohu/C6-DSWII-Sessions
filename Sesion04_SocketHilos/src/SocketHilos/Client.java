@@ -50,7 +50,7 @@ public class Client {
 				DataOutputStream serverFile = 
 					new DataOutputStream(
 						new FileOutputStream(
-								new File("E:\\Files\\C6-DSWII\\SocketThread\\Server\\" + srtFile)));
+								new File("E:\\Files\\C6-DSWII\\SocketThread\\Client\\" + srtFile)));
 				int bytesReceived = 0;
 				while(fileSize > 0 && (bytesReceived = inputStream.read(data, 0, BUFFER_SIZE)) > 0){
 					// Escribimos la data recibida

@@ -1,11 +1,15 @@
 package DataJson;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class TestSerializeJSONPet {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		PetClass pet = new PetClass();
 		pet.setIdPet(100);
 		pet.setName("Aluze");
@@ -25,6 +29,11 @@ public class TestSerializeJSONPet {
 		String dataJsonBuilder = petGsonBuilder.toJson(pet);
 		System.out.println(dataJsonBuilder);
 
+		// Almacenar el json
+		File jsonFile = new File("src/files/pet.json");
+		PrintWriter writer = new PrintWriter(jsonFile);
+		writer.write(dataJsonBuilder);
+		writer.close();
 	}
 
 }

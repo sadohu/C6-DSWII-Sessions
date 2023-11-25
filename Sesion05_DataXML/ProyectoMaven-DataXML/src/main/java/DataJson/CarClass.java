@@ -20,7 +20,7 @@ public class CarClass {
 	@SerializedName("tarjetaPropiedad")
 	private String ownerCard;
 	
-	@SerializedName("añoFabricacion")
+	@SerializedName("fabricacion")
 	private String year;
 	
 	public CarClass() {

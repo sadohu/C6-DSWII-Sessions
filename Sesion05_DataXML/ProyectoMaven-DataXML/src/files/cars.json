@@ -1,0 +1,29 @@
+[
+  {
+    "codigo": 10,
+    "marca": "Nissan",
+    "modelo": "Versa",
+    "color": "Black",
+    "placa": "UFT-100",
+    "tarjetaPropiedad": "TF2023-1058",
+    "fabricacion": "2023"
+  },
+  {
+    "codigo": 20,
+    "marca": "Toyota",
+    "modelo": "Rush",
+    "color": "Black",
+    "placa": "UFT-178",
+    "tarjetaPropiedad": "TF2021-1778",
+    "fabricacion": "2021"
+  },
+  {
+    "codigo": 30,
+    "marca": "Glory",
+    "modelo": "550",
+    "color": "White",
+    "placa": "UKG-199",
+    "tarjetaPropiedad": "TF2023-1188",
+    "fabricacion": "2023"
+  }
+]

@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import DataBase.ConnectionDB;
+
 public class AutorServiceImpl implements AutorService{
 
 	@Override

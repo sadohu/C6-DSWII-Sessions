@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>OperController</servlet-name>
+  	<display-name>OperController</display-name>
+  	<description></description>
+  	<servlet-class>ClientBasicOpers.OperController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>OperController</servlet-name>
+  	<url-pattern>/OperController</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,4 +1,4 @@
-package WebServicesRestDataBase;
+package DataBase;
 
 public class ConnectionDBTest {
 

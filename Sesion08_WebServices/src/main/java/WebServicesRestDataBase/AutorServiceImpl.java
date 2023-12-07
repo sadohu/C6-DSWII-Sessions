@@ -46,7 +46,7 @@ public class AutorServiceImpl implements AutorService{
 
 	@Override
 	public void deleteAutor(Autor autor) {
-		String query = "delete tbl_autor where idautor=?";
+		String query = "delete from tbl_autor where idautor=?";
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = ConnectionDB.getConnection().prepareStatement(query);

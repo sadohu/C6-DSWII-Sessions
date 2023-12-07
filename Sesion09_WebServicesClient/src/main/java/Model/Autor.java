@@ -38,4 +38,9 @@ public class Autor {
 	public void setDescrip(String descrip) {
 		this.descrip = descrip;
 	}
+
+	@Override
+	public String toString() {
+		return "Autor [idautor=" + idautor + ", nomautor=" + nomautor + ", descrip=" + descrip + "]";
+	}
 }

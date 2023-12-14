@@ -46,6 +46,35 @@ public class AutorService {
 		return autores;
 	}
 	
+	public Autor autorById(int id) throws JsonParseException, JsonMappingException, IOException{
+		// Set Interfaces
+		Response response = null;
+		WebTarget webTarget;
+		Client client = ClientBuilder.newClient();
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		// Set response variables
+		Autor autor = null;
+		String responseJson = null;
+		
+		webTarget = client.target("http://localhost:8080/Sesion08_WebServices/App/biblioteca/autor/" + id);
+		Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
+		response = invocationBuilder.get();
+		
+		// Validation: Ok Status
+		if(response.getStatus() != 200 && response.getStatus() != 404)
+			System.out.println("Out of Range");
+		
+		if(response.getStatus() == 404)
+			System.out.println("Autor no encontrado");
+		
+		// Read values and set into Return Object
+		responseJson = response.readEntity(String.class);
+		autor = objectMapper.readValue(responseJson, Autor.class);
+		
+		return autor;
+	}
+	
 	public void saveAutor(Autor autor){
 		// Set interaces
 		Client client = ClientBuilder.newClient();
@@ -63,4 +92,5 @@ public class AutorService {
 			
 		System.out.println("Autor creado exitosamente.");
 	}
+	
 }

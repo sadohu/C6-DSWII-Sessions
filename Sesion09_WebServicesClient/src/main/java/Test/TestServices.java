@@ -9,7 +9,8 @@ public class TestServices {
 
 	public static void main(String[] args) throws Exception {
 		// autores();
-		addAutor();
+		searchAutor(1);
+		//addAutor();
 	}
 	
 	private static void autores() throws Exception{
@@ -18,6 +19,12 @@ public class TestServices {
 		for (Autor autor : autors) {
 			System.out.println(autor);
 		}
+	}
+	
+	private static void searchAutor(int id) throws Exception{
+		AutorService autorService = new AutorService();
+		Autor autor = autorService.autorById(id);
+		System.out.println(autor);
 	}
 	
 	private static void addAutor() {

@@ -33,6 +33,10 @@ public class AutorController extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		String action = request.getParameter("action");
+		Autor autor = null;
+		List<Autor> autors = null;
+		int id = 0;
+		
 		if(action != null){
 			switch(action){
 			case "create":
@@ -40,27 +44,30 @@ public class AutorController extends HttpServlet {
 				break;
 				
 			case "read":
-				List<Autor> autors = autorService.autores();
+				autors = autorService.autores();
 				request.setAttribute("list", autors);
 				request.getRequestDispatcher("/ListadoAutores.jsp").forward(request, response);
 				break;
 				
 			case "update":
-				int id = Integer.parseInt(request.getParameter("id"));
-				Autor autor = autorService.autorById(id);
+				id = Integer.parseInt(request.getParameter("id"));
+				autor = autorService.autorById(id);
 				request.setAttribute("autor", autor);
 				request.getRequestDispatcher("/ActualizarAutor.jsp").forward(request, response);
 				break;
 				
 			case "delete":
-				break;
+				id = Integer.parseInt(request.getParameter("id"));
+				autor = autorService.autorById(id);
+				if(autor != null)
+					autorService.deleteAutor(id);
 				
-			case "search":
+				autors = autorService.autores();
+				request.setAttribute("list", autors);
+				request.getRequestDispatcher("/ListadoAutores.jsp").forward(request, response);
 				break;
 			}
 		}
-		
-		
 	}
 
 	/**

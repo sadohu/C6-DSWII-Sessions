@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>ClientBasicOpers.OperController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AutorController</servlet-name>
+  	<display-name>AutorController</display-name>
+  	<description></description>
+  	<servlet-class>Controller.AutorController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>OperController</servlet-name>
   	<url-pattern>/OperController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AutorController</servlet-name>
+  	<url-pattern>/AutorController</url-pattern>
   </servlet-mapping>
 </web-app>

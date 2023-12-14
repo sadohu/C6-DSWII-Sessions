@@ -111,4 +111,24 @@ public class AutorService {
 		System.out.println("Autor actualizado exitosamente.");
 	}
 	
+	public void deleteAutor(int id) throws JsonParseException, JsonMappingException, IOException{
+		// Set Interfaces
+		Response response = null;
+		WebTarget webTarget;
+		Client client = ClientBuilder.newClient();
+		
+		webTarget = client.target("http://localhost:8080/Sesion08_WebServices/App/biblioteca/autor/" + id);
+		Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
+		response = invocationBuilder.delete();
+		
+		// Validation: Ok Status
+		if(response.getStatus() != 201 && response.getStatus() != 400)
+			System.out.println("Out of Range");
+		
+		if(response.getStatus() == 400)
+			System.out.println("Autor no encontrado");
+		
+		System.out.println("Autor eliminado exitosamente.");
+	}
+	
 }

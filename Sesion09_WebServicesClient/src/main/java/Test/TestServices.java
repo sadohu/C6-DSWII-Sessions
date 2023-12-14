@@ -9,8 +9,9 @@ public class TestServices {
 
 	public static void main(String[] args) throws Exception {
 		// autores();
-		searchAutor(1);
+		//searchAutor(1);
 		//addAutor();
+		updateAutor();
 	}
 	
 	private static void autores() throws Exception{
@@ -35,6 +36,16 @@ public class TestServices {
 		autor.setDescrip("Te saco los ojos bobo!");
 		
 		autorService.saveAutor(autor);
+	}
+	
+	private static void updateAutor() {
+		AutorService autorService = new AutorService();
+		Autor autor = new Autor();
+		autor.setIdautor(7);
+		autor.setNomautor("Aluze Luperdi");
+		autor.setDescrip("Logica de Programación II!");
+		
+		autorService.updateAutor(autor);
 	}
 
 }

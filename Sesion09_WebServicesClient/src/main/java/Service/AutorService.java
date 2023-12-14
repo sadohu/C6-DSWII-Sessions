@@ -93,4 +93,22 @@ public class AutorService {
 		System.out.println("Autor creado exitosamente.");
 	}
 	
+	public void updateAutor(Autor autor){
+		// Set interaces
+		Client client = ClientBuilder.newClient();
+		WebTarget webTarget;
+		Response response = null;
+		
+		// Implementation
+		webTarget = client.target("http://localhost:8080/Sesion08_WebServices/App/biblioteca/autor");
+		Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
+		response = invocationBuilder.put(Entity.entity(autor, MediaType.APPLICATION_JSON));
+		
+		// Validation: Ok Status
+		if(response.getStatus() != 201)
+			System.out.println("Error al crear el autor: " + response.getStatus());
+			
+		System.out.println("Autor actualizado exitosamente.");
+	}
+	
 }

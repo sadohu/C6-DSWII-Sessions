@@ -37,21 +37,26 @@ public class AutorController extends HttpServlet {
 			case "create":
 				request.getRequestDispatcher("/RegistrarAutor.jsp").forward(request, response);
 				break;
+				
 			case "read":
+				AutorService autorService = new AutorService();
+				List<Autor> autors = autorService.autores();
+				request.setAttribute("list", autors);
+				request.getRequestDispatcher("/ListadoAutores.jsp").forward(request, response);
 				break;
+				
 			case "update":
 				break;
+				
 			case "delete":
 				break;
+				
 			case "search":
 				break;
 			}
 		}
 		
-		AutorService autorService = new AutorService();
-		List<Autor> autors = autorService.autores();
-		request.setAttribute("list", autors);
-		request.getRequestDispatcher("/ListadoAutores.jsp").forward(request, response);
+		
 	}
 
 	/**

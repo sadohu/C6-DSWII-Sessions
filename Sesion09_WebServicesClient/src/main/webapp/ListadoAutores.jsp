@@ -12,6 +12,7 @@
 <body bgcolor="#c5dec9">
 	<h1 align="center">Consumiendo WEB SERVICE REST con Base de Datos</h1>
 	<h2 align="center">Listado de autores</h2>
+	<a href="AutorController?action=create">Registrar nuevo Autor</a>
 	<table>
 		<tr>
 			<th>Codigo</th>

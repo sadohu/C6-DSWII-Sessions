@@ -32,8 +32,8 @@
 			<td><%=item.getIdautor()%></td>
 			<td><%=item.getNomautor()%></td>
 			<td><%=item.getDescrip()%></td>
+			<td><a href="AutorController?action=update&id=<%=item.getIdautor()%>">Actualizar</a></td>
 			<td>Eliminar</td>
-			<td>Actualizar</td>
 		</tr>
 
 		<%	
